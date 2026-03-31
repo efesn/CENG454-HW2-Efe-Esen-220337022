@@ -21,6 +21,16 @@ public class DangerZoneController : MonoBehaviour
 
         // Start delayed missile launch
         activeCountdown = StartCoroutine(MissileCountdown(other.transform));
+       
+       // DERS:
+        // if (other.gameObject.CompareTag("Player"))
+        // {
+        //     // Show warning immediately
+        //     // examManager.EnterDangerZone();
+        //     Debug.Log("Player entered danger zone!");
+        //     // // Start delayed missile launch
+        //     // activeCountdown = StartCoroutine(MissileCountdown(other.transform));
+        // }
     }
 
     private void OnTriggerExit(Collider other)
@@ -37,6 +47,22 @@ public class DangerZoneController : MonoBehaviour
         // Destroy active missile and clear HUD
         missileLauncher.DestroyActiveMissile();
         examManager.ExitDangerZone();
+        
+        // DERS:
+        // if (other.gameObject.CompareTag("Player"))
+        // {
+        //     Debug.Log("Player exited danger zone!");
+        //     // // Cancel countdown if still running
+        //     // if (activeCountdown != null)
+        //     // {
+        //     //     StopCoroutine(activeCountdown);
+        //     //     activeCountdown = null;
+        //     // }
+
+        //     // // Destroy active missile and clear HUD
+        //     // missileLauncher.DestroyActiveMissile();
+        //     // examManager.ExitDangerZone();
+        // }
     }
 
     private IEnumerator MissileCountdown(Transform target)
