@@ -15,22 +15,22 @@ public class AircraftThreatHandler : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     } 
  
-    private void OnTriggerEnter(Collider collision) 
-    { 
-        // TODO (Task 3-H): if the missile hits the aircraft, apply the chosen penalty
+    private void OnTriggerEnter(Collider other)
+    {
+        // Task 3-H: if missile hits aircraft, apply penalty
         if (!other.CompareTag("Missile")) return;
 
         // hit audio
         if (hitAudioSource != null)
             hitAudioSource.Play();
 
-        // notify mission manager
+        // Notify mission manager
         examManager.MissionFailed();
 
-        // reset aircraft to respawn point
+        // Reset aircraft to respawn point
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.position = respawnPoint.position;
         transform.rotation = respawnPoint.rotation;
-    } 
+    }
 } 
