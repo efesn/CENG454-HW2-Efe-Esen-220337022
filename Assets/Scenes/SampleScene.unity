@@ -1461,6 +1461,7 @@ GameObject:
   - component: {fileID: 1607357452}
   - component: {fileID: 1607357451}
   - component: {fileID: 1607357450}
+  - component: {fileID: 1607357454}
   m_Layer: 0
   m_Name: Landing_Strip
   m_TagString: Untagged
@@ -1483,7 +1484,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1561,6 +1562,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607357454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607357449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b685d6026588f946895f6c99731a6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LandingZoneController
+  examManager: {fileID: 2034038966}
 --- !u!1 &1673835253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,6 +1618,7 @@ GameObject:
   - component: {fileID: 1701706947}
   - component: {fileID: 1701706946}
   - component: {fileID: 1701706945}
+  - component: {fileID: 1701706949}
   m_Layer: 0
   m_Name: Takeoff_Runway
   m_TagString: Untagged
@@ -1626,7 +1641,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1704,6 +1719,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1701706949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701706944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b417f75e90d953d4ab8b248e24819726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TakeoffZoneController
+  examManager: {fileID: 2034038966}
 --- !u!1 &1789522484
 GameObject:
   m_ObjectHideFlags: 0
