@@ -13,11 +13,11 @@ public class FlightExamManager : MonoBehaviour
     private bool threatCleared = false;
     private bool missionComplete = false;
 
-    public bool HasTakenOff => hasTakenOff;
     public bool ThreatCleared => threatCleared;
 
     public void SetTakenOff()
     {
+        if (hasTakenOff) return;
         hasTakenOff = true;
         missionText.text = "Mission: Enter the Danger Zone";
     }
@@ -35,16 +35,23 @@ public class FlightExamManager : MonoBehaviour
         missionText.text = "Mission: Land Safely";
     }
 
-    public void MissionComplete()
+    public void MissionFailed()
     {
+        threatCleared = false;
+        statusText.text = "Mission Failed! Try again.";
+        missionText.text = "Mission: Take Off";
+    }
+
+    public void TryCompleteMission()
+    {
+        if (!hasTakenOff || !threatCleared)
+        {
+            statusText.text = "You must clear the threat first!";
+            return;
+        }
+
         missionComplete = true;
         statusText.text = "Mission Complete!";
         missionText.text = "You landed safely. Well done!";
-    }
-
-    public void MissionFailed()
-    {
-        statusText.text = "Mission Failed!";
-        missionText.text = "You were hit by a missile.";
     }
 }
